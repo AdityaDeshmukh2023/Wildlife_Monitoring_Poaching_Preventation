@@ -1,0 +1,23 @@
+cat << EOF > .gitignore
+# Virtual environment
+.venv
+venv/
+env/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Local development settings
+.env
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+EOF

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Poaching Detection</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static' ,filename='css/style.css') }}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Poaching Detection</h1>
+    </header>
+    <main>
+      <div class="container">
+      
+      <section class="main">
+        <h2>Introduction</h2>
+        
+        <p>Poaching is a serious threat to the survival of many species of animals. It is the illegal hunting, killing, or capturing of wild animals, often for commercial gain. Poaching has been a problem for many years, and it continues to be a major issue today. Poaching not only threatens the survival of animals, but it also has negative effects on the environment and the economy.</p>
+
+        <h2>Types of Poaching</h2>
+        <p>There are several types of poaching, including:</p>
+        <ul>
+            <li>Poaching for meat: This is the most common type of poaching. People hunt animals for their meat, which is then sold in local markets.</li>
+            <li>Poaching for ivory: This is the hunting of elephants for their tusks, which are made of ivory. Ivory is a valuable material that is used to make jewelry and other decorative items.</li>
+            <li>Poaching for pelts: This is the hunting of animals for their fur, which is then used to make clothing and other products.</li>
+            <li>Poaching for sport: This is the hunting of animals for the sake of the sport, rather than for food or other materials.</li>
+        </ul>
+
+        
+
+        <h2>Poaching Detection</h2>
+        <p>Poaching detection is the use of technology to detect and prevent poaching. One of the most effective tools for poaching detection is machine learning. Machine learning is a type of artificial intelligence that allows computers to learn and improve from experience without being explicitly programmed.</p>
+
+        <section class="upload-section">
+           
+            <div class="container mt-5">
+              <div class="row">
+                <div class="col-md-6 offset-md-3">
+                  <div class="card">
+                    <div class="card-header">
+                      <h3 class="text-center">Poaching Detection</h3>
+                    </div>
+                    <div class="card-body">
+                      {% if error %}
+                      <div class="alert alert-danger">{{ error }}</div>
+                      {% endif %}
+                      <form action="/" method="post">
+                        <div class="form-group">
+                          <label for="folder_path">Provide the directory where images of video are present:</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="folder_path"
+                            name="folder_path"
+                          />
+                        </div>
+                        <br />
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+                      {% if prediction %}
+                      <div class="alert alert-success mt-3">{{ prediction }}</div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>           
+        </section>
+        <h2><center>Choose the play the video </center></h2>
+              <!--video component -->
+          <input type="file" id="videoInput">
+    <button onclick="playVideo()">Play Video</button>
+    <br>
+    <br>
+
+    <video id="videoPlayer" width="700" height="360" controls></video>
+    
+    <script>
+      function playVideo() {
+        var videoFile = document.getElementById('videoInput').files[0];
+        var videoPlayer = document.getElementById('videoPlayer');
+        var videoURL = URL.createObjectURL(videoFile);
+        videoPlayer.src = videoURL;
+      }
+    </script>
+    <h2>Effects of Poaching</h2>
+        <p>Poaching has several negative effects on the environment, the economy, and society as a whole. Some of the effects of poaching include:</p>
+        <ul>
+            <li>Loss of biodiversity: Poaching can lead to the extinction of certain species of animals, which can have a negative impact on the environment as a whole.</li>
+            <li>Disruption of ecosystems: The loss of certain species of animals can disrupt ecosystems and affect the balance of nature.</li>
+            <li>Loss of revenue: Poaching can negatively impact the tourism industry, which is often dependent on the presence of wildlife.</li>
+            <li>Increased crime: Poaching is often associated with other forms of crime, such as smuggling and money laundering.</li>
+        </ul>
+    <h2>Conclusion</h2>
+    <p>Poaching is a serious threat to the survival of many species of animals. It is important to use all available tools and technologies to prevent and detect poaching. This web application is just one example
+           
+</div>
+    <br>
+    <footer>
+      <p>Created by Adi, 2025</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
